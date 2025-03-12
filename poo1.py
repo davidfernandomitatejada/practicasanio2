@@ -4,7 +4,7 @@ class Estudiante:
         self.__nombre = nombre
         self.__edad = edad
         self._curso = curso
-        self.__calificacion = calificacion if 0 <= calificacion <= 100 else None
+        self.__calificacion = calificacion 
 
     def get_nombre(self):
         return self.__nombre
