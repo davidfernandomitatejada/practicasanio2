@@ -4,8 +4,7 @@ class Estudiante:
         self.__nombre = nombre
         self.__edad = edad
         self._curso = curso
-        self.__calificacion = None
-        self.asignar_calificacion(calificacion)
+        self.__calificacion = calificacion if 0 <= calificacion <= 100 else None
 
     def get_nombre(self):
         return self.__nombre
@@ -21,14 +20,12 @@ class Estudiante:
         return f"Nombre: {self.__nombre}, Edad: {self.__edad}"
 
     def asignar_calificacion(self, nueva_calificacion):
-        if 0 <= nueva_calificacion <= 100:
-            self.__calificacion = nueva_calificacion
-        else:
-            raise ValueError("La calificación debe estar entre 0 y 100")
+        self.__calificacion = nueva_calificacion
 
     def obtener_calificacion(self):
         return self.__calificacion
 
+# Ejemplo de uso:
 estudiante1 = Estudiante("Juan", 20, "Matemáticas", 85)
 print(estudiante1.mostrar_info())
 print("Calificación:", estudiante1.obtener_calificacion())
@@ -36,7 +33,7 @@ print("Calificación:", estudiante1.obtener_calificacion())
 estudiante1.asignar_calificacion(90)
 print("Nueva calificación:", estudiante1.obtener_calificacion())
 
-
+# Eliminar el nombre
 estudiante1.del_nombre()
 
 #Ejercicio 2
